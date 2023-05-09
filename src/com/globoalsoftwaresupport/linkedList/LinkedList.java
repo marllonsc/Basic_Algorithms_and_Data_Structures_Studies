@@ -16,6 +16,7 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
 		
 	}
 
+	@SuppressWarnings("unused")
 	private void insertBeginning(T data) {
 		Node<T> newNode = new Node<>(data);
 		newNode.setNextNode(root);

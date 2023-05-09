@@ -1,7 +1,5 @@
 package com.globoalsoftwaresupport;
 
-import java.util.Iterator;
-
 public class Problem02 {
 	
 	public static void main(String[] args) {

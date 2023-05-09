@@ -1,7 +1,6 @@
 package com.globoalsoftwaresupport;
 
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class Problem01 {
 	
