@@ -3,13 +3,6 @@ package com.cpq.helper;
 public class App extends CpqHelper{
 	
 	
-	/*
-	 * 
-	 [AND]([AND](<*ATTSEL(MQonCloudOffering)*>,
-	<*ISSELECTED(Global_SaaSESupport.MQ on Cloud Virtual Processor Core Advanced Support)*>),
-	[NEQ](<*QUANTITY(MQonCloudOffering)*>,<*GETATVQTY(Global_SaaSESupport:E0DUVZX)*>))
-	 
-	 */
 	public static void main(String[] args) {
 		
 		String checking = ""+and(
