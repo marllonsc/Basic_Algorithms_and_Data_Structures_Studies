@@ -15,7 +15,7 @@ public class CpqHelper {
 	}
 	
 	public static String isSelected(String att_field) {
-		return "<*ISSELECTED("+att_field+")*>)";
+		return "<*ISSELECTED("+att_field+")*>";
 	}
 	
 	public static String getValueCheckBox(String att_field) {
@@ -30,5 +30,12 @@ public class CpqHelper {
 		return "[AND]("+check01+","+check02+")";
 	}
 	
+	public static String or(String check01, String check02) {
+		return "[OR]("+check01+","+check02+")";
+	}
+	
+	public static String not(String check) {
+		return "[NOT]("+check+")";
+	}
 
 }
