@@ -37,5 +37,34 @@ public class CpqHelper {
 	public static String not(String check) {
 		return "[NOT]("+check+")";
 	}
+	
+	public static String eval(String string) {
+		return "<* Eval("+string+")*>";
+	}
+	
+	public static String if_condition(String condition, String positive, String negative) {
+		return "[IF]( "+condition+" ){"+positive+"}"+ ((negative != null && negative.isEmpty()) ? "{"+negative+"}[ENDIF]" : "[ENDIF]");
+	}
+	
+	public static String geq(String value01, String value02) {
+		return "[GEQ]("+value01+","+value02+")";
+	}
+	
+	public static String gt(String value01, String value02) {
+		return "[GT]("+value01+","+value02+")";
+	}
+	
+	public static String lt(String value01, String value02) {
+		return "[LT]("+value01+","+value02+")";
+	}
+	
+	public static String leq(String value01, String value02) {
+		return "[LEQ]("+value01+","+value02+")";
+	}
+	
+	public static String like(String value01, String value02) {
+		return "[LIKE]("+value01+","+value02+")";
+	}
+	
 
 }
