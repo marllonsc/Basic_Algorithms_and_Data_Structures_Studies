@@ -19,22 +19,15 @@ public class App extends CpqHelper{
 //		System.out.println(checking);
 		
 	
-		String and1 = generatCheck("Global_SaaSESupport.QRadar Suite - EDR Enterprise as a Service Client Device Advanced Support", "Global_SaaSESupport:E0DZ3ZX", "ReaQTAServiceOffering.QRadar Suite - EDR Enterprise", "ReaQTAServiceOffering:ReaQTAEnterpriseasaServicev3");
-		String and2 = generatCheck("Global_SaaSESupport.QRadar Suite - EDR Client Device Advanced Support", "Global_SaaSESupport:E0DZ4ZX", "ReaQTAServiceOffering.QRadar Suite - EDR", "ReaQTAServiceOffering:ReaQTAasaServicev3");
-		String and3 = generatCheck("Global_SaaSESupport.QRadar Suite - EDR Essential Managed Detection and Response Client Device Advanced Support", "Global_SaaSESupport:E0DYZZX", "ReaQTAServiceMDR.QRadar Suite - Managed Detection and Response (MDR)", "ReaQTAServiceMDR:EssentialManagedDetectionandResponsev3");
+		String and1 = execute("Global_SaaSESupport.QRadar Suite - EDR Enterprise as a Service Client Device Advanced Support", "Global_SaaSESupport:E0DZ3ZX", "ReaQTAServiceOffering.QRadar Suite - EDR Enterprise", "ReaQTAServiceOffering:ReaQTAEnterpriseasaServicev3");
+		String and2 = execute("Global_SaaSESupport.QRadar Suite - EDR Client Device Advanced Support", "Global_SaaSESupport:E0DZ4ZX", "ReaQTAServiceOffering.QRadar Suite - EDR", "ReaQTAServiceOffering:ReaQTAasaServicev3");
+		String and3 = execute("Global_SaaSESupport.QRadar Suite - EDR Essential Managed Detection and Response Client Device Advanced Support", "Global_SaaSESupport:E0DYZZX", "ReaQTAServiceMDR.QRadar Suite - Managed Detection and Response (MDR)", "ReaQTAServiceMDR:EssentialManagedDetectionandResponsev3");
 		
 		String checking = or(and1, or(and2, and3));
 		
 		
 		System.out.println(checking);
 		
-	}
-
-	private static String generatCheck(String globalSlect, String globalValue, String attSelect, String attValue) {
-		String and1 = and(isSelected(globalSlect),isSelected(attSelect));
-		String and2 = and(isSelected(globalSlect),not(isSelected(attSelect)));
-		String or = or(and1,and2);
-		return and( or ,neq(getValueCheckBox(attValue), getValueCheckBox(globalValue)));
 	}
 	
 	//private static void addItem(List<String> list);

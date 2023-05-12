@@ -66,5 +66,13 @@ public class CpqHelper {
 		return "[LIKE]("+value01+","+value02+")";
 	}
 	
+	
+	public static String execute(String globalSlect, String globalValue, String attSelect, String attValue) {
+		String and1 = and(isSelected(globalSlect),isSelected(attSelect));
+		String and2 = and(isSelected(globalSlect),not(isSelected(attSelect)));
+		String or = or(and1,and2);
+		return and( or ,neq(getValueCheckBox(attValue), getValueCheckBox(globalValue)));
+	}
+	
 
 }
